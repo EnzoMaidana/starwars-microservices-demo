@@ -20,6 +20,11 @@ app.use('/planets', createProxyMiddleware({
     changeOrigin: true,
 }));
 
+app.use('/database', createProxyMiddleware({
+    target: 'http://database:3004',
+    changeOrigin: true,
+}));
+
 app.listen(3000, () => {
     console.log('Gateway on port 3000')
 })
